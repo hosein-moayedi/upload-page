@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kaltura Player Sample</title>
+    <script src="file:///Users/hosein/Desktop/Projects/rn-test/kaltura-player-js/dist/kaltura-tv-player.js"></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #player-container {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="player-container"></div>
+
+    <script>
+      var config = {
+        targetId: "player-container",
+        playback: {
+          autoplay: true,
+        },
+        provider: {},
+        sources: {
+          dash: [
+            {
+              mimetype: "application/x-mpegURL",
+              url: "https://tv.torgod.top/hls/c.mp4/master.m3u8",
+            },
+          ],
+        },
+      };
+      KalturaPlayer.setup(config);
+    </script>
+  </body>
+</html>
